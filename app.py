@@ -9,7 +9,7 @@ from sqlalchemy import create_engine
 
 
 
-engine = create_engine('postgresql://nps_demo_user:12345678@demobase.chjqryvwruco.us-east-2.rds.amazonaws.com:5432/strategy')
+engine = create_engine('postgresql://[database_user]:[password]@[url_database].amazonaws.com:5432/strategy')
 df = pd.read_sql("SELECT * from trades", engine.connect(), parse_dates=('Entry time',))
 
 def filter_df(df,exchange,leverage,start_date,end_date):
